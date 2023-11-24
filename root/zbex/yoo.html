@@ -1,0 +1,227 @@
+<html><head>
+    <title>Sort Visualizer 
+- 
+Custom Sort
+
+</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="sorting,sort,bubble,selection,quick,merge,visualization,animation">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="language" content="English">
+    <meta http-equiv="expires" content="43200">
+    <meta name="og:image" content="http://sortvisualizer.com/static/images/og.png">
+
+    <meta property="og:title" content="Sort Visualizer">
+    <meta property="og:url" content="https://sortvisualizer.com">
+
+    <meta property="og:image" content="http://sortvisualizer.com/static/images/og.png">
+    <meta property="og:image:width" content="540">
+    <meta property="og:image:height" content="494">
+
+    <link rel="manifest" href="/static/manifest.json">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="shortcut icon" href="/static/images/favicon.ico">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jura:wght@600&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Electrolize&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/static/css/base.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <noscript>JavaScript is required for this website. Please allow JavaScript and
+      refresh the page.</noscript>
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.12.0/devicon.min.css">
+<link rel="stylesheet" href="/static/css/others/highlightjs.css">
+<link rel="stylesheet" href="/static/css/others/themes/seti.css">
+<link rel="stylesheet" type="text/css" href="/static/css/base_sort.css">
+<link rel="stylesheet" href="/static/css/others/codemirror.css">
+
+<script type="text/javascript" src="/static/js/base_sort.js" defer=""></script>
+<script type="text/javascript" src="/static/js/others/codemirror.js" defer=""></script>
+<script type="text/javascript" src="/static/js/others/fullscreen.js" defer=""></script>
+<script type="text/javascript" src="/static/js/others/mode/javascript/javascript.js" defer=""></script>
+<script type="text/javascript" src="/static/js/others/matchbrackets.js" defer=""></script>
+<script type="text/javascript" src="/static/js/others/closebrackets.js" defer=""></script>
+<script type="text/javascript" src="/static/js/others/comment.js" defer=""></script>
+<script type="text/javascript" src="/static/js/sorts/customsort.js" defer=""></script>
+
+<script>
+    let audio = 'True'[0] == "T" | 0;
+</script>
+
+  </head>
+
+  <body data-aos-easing="ease" data-aos-duration="1000" data-aos-delay="0">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script type="text/javascript" src="/static/js/base.js"></script>
+    <div class="sidenav" id="sidenav">
+      <a href="/" class="sidenav-title no-remove"><i class="material-icons icon">home</i> Home</a>
+      <div id="sep" class="no-remove"></div>
+      <div class="sidenav-title no-remove">
+        <i class="material-icons icon">sort</i> Sorts
+      </div>
+      <div class="sidenav-subtitle no-remove">LOGARITHMIC</div>
+      <a href="/quicksort" class="sidenav-element no-remove">Quick Sort</a>
+      <a href="/mergesort" class="sidenav-element no-remove">Merge Sort</a>
+      <a href="/heapsort" class="sidenav-element no-remove">Heap Sort</a>
+      <div class="sidenav-subtitle no-remove">QUADRATIC</div>
+      <a href="/bubblesort" class="sidenav-element no-remove">Bubble Sort</a>
+      <a href="/selectionsort" class="sidenav-element no-remove">Selection Sort</a>
+      <a href="/insertionsort" class="sidenav-element no-remove">Insertion Sort</a>
+      <a href="/gnomesort" class="sidenav-element no-remove">Gnome Sort</a>
+      <a href="/shakersort" class="sidenav-element no-remove">Shaker Sort</a>
+      <a href="/oddevensort" class="sidenav-element no-remove">Odd Even Sort</a>
+      <a href="/pancakesort" class="sidenav-element no-remove">Pancake Sort</a>
+      <div class="sidenav-subtitle no-remove">WEIRD</div>
+      <a href="/bitonicsort" class="sidenav-element no-remove">Bitonic Sort</a>
+      <a href="/radixsort" class="sidenav-element no-remove">Radix Sort</a>
+      <a href="/shellsort" class="sidenav-element no-remove">Shell Sort</a>
+      <a href="/combsort" class="sidenav-element no-remove">Comb Sort</a>
+      <a href="/bogosort" class="sidenav-element no-remove">Bogo Sort</a>
+      <a href="/stoogesort" class="sidenav-element no-remove">Stooge Sort</a>
+      <div class="sidenav-subtitle no-remove">CUSTOM</div>
+      <a href="/customsort" class="sidenav-element no-remove" style="margin-bottom: 40px">Your Sort</a>
+    </div>
+
+    <div class="topnav">
+      <button class="sidenav-btn topnav-element ripple open" id="sidenav-menu">
+        <i class="material-icons icon">menu</i>
+      </button>
+      <a href="/" class="topnav-element">SORT VISUALIZER</a>
+      
+<button type="submit" id="audio" class="ripple sidenav-btn"><i class="material-icons icon">volume_up</i></button>
+
+    </div>
+    
+
+<div>
+    <div id="box">
+        <div class="title aos-init aos-animate" data-aos="fade-down">
+            
+Custom Sort
+
+        </div>
+        <div style="float: right; white-space: nowrap;">
+            <button class="sort-btns" id="shuffle-btn" onclick="shuffle()"><i class="material-icons">shuffle</i></button>
+            <button class="sort-btns" id="run-btn" onclick="run()"><i class="material-icons">play_arrow</i></button>
+            <div class="slider-container">
+                <div id="elements-text">
+                    Elements: <span id="slider-span">100</span><br>
+                </div>
+                <input type="range" value="100" min="10" max="1000" step="5" name="item-num" id="slider" oninput="sliderChange()">
+            </div>
+        </div>
+
+        <div style="clear: both; padding-top: 20px;">
+            <div id="sort-container">
+            <div class="element" style="left: 83%; width: 1%; height: 1%;"></div><div class="element" style="left: 69%; width: 1%; height: 2%;"></div><div class="element" style="left: 97%; width: 1%; height: 3%;"></div><div class="element" style="left: 63%; width: 1%; height: 4%;"></div><div class="element" style="left: 38%; width: 1%; height: 5%;"></div><div class="element" style="left: 76%; width: 1%; height: 6%;"></div><div class="element" style="left: 37%; width: 1%; height: 7%;"></div><div class="element" style="left: 84%; width: 1%; height: 8%;"></div><div class="element" style="left: 77%; width: 1%; height: 9%;"></div><div class="element" style="left: 80%; width: 1%; height: 10%;"></div><div class="element" style="left: 20%; width: 1%; height: 11%;"></div><div class="element" style="left: 95%; width: 1%; height: 12%;"></div><div class="element" style="left: 28%; width: 1%; height: 13%;"></div><div class="element" style="left: 19%; width: 1%; height: 14%;"></div><div class="element" style="left: 98%; width: 1%; height: 15%;"></div><div class="element" style="left: 81%; width: 1%; height: 16%;"></div><div class="element" style="left: 8%; width: 1%; height: 17%;"></div><div class="element" style="left: 94%; width: 1%; height: 18%;"></div><div class="element" style="left: 65%; width: 1%; height: 19%;"></div><div class="element" style="left: 78%; width: 1%; height: 20%;"></div><div class="element" style="left: 82%; width: 1%; height: 21%;"></div><div class="element" style="left: 60%; width: 1%; height: 22%;"></div><div class="element" style="left: 74%; width: 1%; height: 23%;"></div><div class="element" style="left: 2%; width: 1%; height: 24%;"></div><div class="element" style="left: 87%; width: 1%; height: 25%;"></div><div class="element" style="left: 42%; width: 1%; height: 26%;"></div><div class="element" style="left: 45%; width: 1%; height: 27%;"></div><div class="element" style="left: 18%; width: 1%; height: 28%;"></div><div class="element" style="left: 10%; width: 1%; height: 29%;"></div><div class="element" style="left: 59%; width: 1%; height: 30%;"></div><div class="element" style="left: 35%; width: 1%; height: 31%;"></div><div class="element" style="left: 40%; width: 1%; height: 32%;"></div><div class="element" style="left: 54%; width: 1%; height: 33%;"></div><div class="element" style="left: 48%; width: 1%; height: 34%;"></div><div class="element" style="left: 52%; width: 1%; height: 35%;"></div><div class="element" style="left: 99%; width: 1%; height: 36%;"></div><div class="element" style="left: 89%; width: 1%; height: 37%;"></div><div class="element" style="left: 4%; width: 1%; height: 38%;"></div><div class="element" style="left: 68%; width: 1%; height: 39%;"></div><div class="element" style="left: 67%; width: 1%; height: 40%;"></div><div class="element" style="left: 5%; width: 1%; height: 41%;"></div><div class="element" style="left: 36%; width: 1%; height: 42%;"></div><div class="element" style="left: 3%; width: 1%; height: 43%;"></div><div class="element" style="left: 53%; width: 1%; height: 44%;"></div><div class="element" style="left: 88%; width: 1%; height: 45%;"></div><div class="element" style="left: 55%; width: 1%; height: 46%;"></div><div class="element" style="left: 93%; width: 1%; height: 47%;"></div><div class="element" style="left: 17%; width: 1%; height: 48%;"></div><div class="element" style="left: 46%; width: 1%; height: 49%;"></div><div class="element" style="left: 26%; width: 1%; height: 50%;"></div><div class="element" style="left: 70%; width: 1%; height: 51%;"></div><div class="element" style="left: 6%; width: 1%; height: 52%;"></div><div class="element" style="left: 39%; width: 1%; height: 53%;"></div><div class="element" style="left: 11%; width: 1%; height: 54%;"></div><div class="element" style="left: 49%; width: 1%; height: 55%;"></div><div class="element" style="left: 47%; width: 1%; height: 56%;"></div><div class="element" style="left: 61%; width: 1%; height: 57%;"></div><div class="element" style="left: 43%; width: 1%; height: 58%;"></div><div class="element" style="left: 64%; width: 1%; height: 59%;"></div><div class="element" style="left: 33%; width: 1%; height: 60%;"></div><div class="element" style="left: 58%; width: 1%; height: 61%;"></div><div class="element" style="left: 96%; width: 1%; height: 62%;"></div><div class="element" style="left: 14%; width: 1%; height: 63%;"></div><div class="element" style="left: 21%; width: 1%; height: 64%;"></div><div class="element" style="left: 66%; width: 1%; height: 65%;"></div><div class="element" style="left: 79%; width: 1%; height: 66%;"></div><div class="element" style="left: 15%; width: 1%; height: 67%;"></div><div class="element" style="left: 31%; width: 1%; height: 68%;"></div><div class="element" style="left: 16%; width: 1%; height: 69%;"></div><div class="element" style="left: 44%; width: 1%; height: 70%;"></div><div class="element" style="left: 23%; width: 1%; height: 71%;"></div><div class="element" style="left: 90%; width: 1%; height: 72%;"></div><div class="element" style="left: 50%; width: 1%; height: 73%;"></div><div class="element" style="left: 12%; width: 1%; height: 74%;"></div><div class="element" style="left: 41%; width: 1%; height: 75%;"></div><div class="element" style="left: 62%; width: 1%; height: 76%;"></div><div class="element" style="left: 30%; width: 1%; height: 77%;"></div><div class="element" style="left: 72%; width: 1%; height: 78%;"></div><div class="element" style="left: 9%; width: 1%; height: 79%;"></div><div class="element" style="left: 25%; width: 1%; height: 80%;"></div><div class="element" style="left: 56%; width: 1%; height: 81%;"></div><div class="element" style="left: 27%; width: 1%; height: 82%;"></div><div class="element" style="left: 22%; width: 1%; height: 83%;"></div><div class="element" style="left: 85%; width: 1%; height: 84%;"></div><div class="element" style="left: 92%; width: 1%; height: 85%;"></div><div class="element" style="left: 29%; width: 1%; height: 86%;"></div><div class="element" style="left: 13%; width: 1%; height: 87%;"></div><div class="element" style="left: 86%; width: 1%; height: 88%;"></div><div class="element" style="left: 34%; width: 1%; height: 89%;"></div><div class="element" style="left: 91%; width: 1%; height: 90%;"></div><div class="element" style="left: 0%; width: 1%; height: 91%;"></div><div class="element" style="left: 32%; width: 1%; height: 92%;"></div><div class="element" style="left: 57%; width: 1%; height: 93%;"></div><div class="element" style="left: 1%; width: 1%; height: 94%;"></div><div class="element" style="left: 24%; width: 1%; height: 95%;"></div><div class="element" style="left: 75%; width: 1%; height: 96%;"></div><div class="element" style="left: 7%; width: 1%; height: 97%;"></div><div class="element" style="left: 51%; width: 1%; height: 98%;"></div><div class="element" style="left: 71%; width: 1%; height: 99%;"></div><div class="element" style="left: 73%; width: 1%; height: 100%;"></div></div>
+        </div>
+
+    </div>
+</div>
+<div id="sort-cover">
+    <div class="info-parent">
+        <div class="sort-description">
+            <div style="font-family: 'Jura', Courier, monospace; font-size: 35px;">INSTRUCTIONS</div>
+            
+<p>
+    Implement and visualize your sort algorithm using the JavaScript programming language.
+</p>
+<p>
+    Write an <i>asyncronous</i> function that takes an <code>Array</code> of <code>DOM element objects</code> as a parameter and type the entry point of the algorithm in the appropriate text field below.
+</p>
+<p>
+    Sort the elements in-place, in ascending order using the <a href="/docs" target="_blank">documented APIs</a> for the visualization.
+</p>
+<p>
+    When you're done, you can contribute to this project by submitting your code to us. We'll review it and implement it!
+    You can add notes and suggestions in the code as comments.
+</p>
+
+        </div>
+    </div>
+
+    <div class="menu-box">
+        <div style="font-family: 'Jura', Courier, monospace; font-size: 35px;">IMPLEMENTATIONS</div>
+        <div id="code-test"><div class="CodeMirror cm-s-seti CodeMirror-wrap"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 4px; left: 43px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;" tabindex="0"></textarea></div><div class="CodeMirror-vscrollbar" cm-not-content="true" style="display: block; bottom: 0px;"><div style="min-width: 1px; height: 1668px;"></div></div><div class="CodeMirror-hscrollbar" cm-not-content="true"><div style="height: 100%; min-height: 1px; width: 0px;"></div></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 39px; margin-bottom: -15px; border-right-width: 15px; min-height: 1688px; padding-right: 15px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines"><div style="position: relative; outline: none;"><div class="CodeMirror-measure"><span><span>&ZeroWidthSpace;</span>x</span></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-cursors"><div class="CodeMirror-cursor" style="left: 4px; top: 0px; height: 14px;">&nbsp;</div></div><div class="CodeMirror-code" style=""><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 31px;">1</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-comment">// Write an async function that sorts a list of DOM elements by their value,</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 31px;">2</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-comment">// available with getValue(element).</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 31px;">3</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span cm-text="">&ZeroWidthSpace;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 31px;">4</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-comment">// For more information, check the documentation: https://www.sortvisualizer.com/docs</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 31px;">5</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span cm-text="">&ZeroWidthSpace;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 31px;">6</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-comment">// Here's an example implementation of the Selection Sort algorithm visualization using the API.</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 31px;">7</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span cm-text="">&ZeroWidthSpace;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 31px;">8</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-keyword">async</span> <span class="cm-keyword">function</span> <span class="cm-def">selectionSort</span>(<span class="cm-def">elements</span>) {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 31px;">9</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-keyword">let</span> <span class="cm-def">min_idx</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 31px;">10</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-comment">// Loop over all the elements</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 31px;">11</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"> <span class="cm-tab" role="presentation" cm-text="	">   </span><span class="cm-keyword">for</span> (<span class="cm-keyword">let</span> <span class="cm-def">i</span> <span class="cm-operator">=</span> <span class="cm-number">0</span>; <span class="cm-variable-2">i</span> <span class="cm-operator">&lt;</span> <span class="cm-variable-2">elements</span>.<span class="cm-property">length</span>; <span class="cm-variable-2">i</span><span class="cm-operator">++</span>) {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 31px;">12</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-variable-2">min_idx</span> <span class="cm-operator">=</span> <span class="cm-variable-2">i</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 31px;">13</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span cm-text="">&ZeroWidthSpace;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 31px;">14</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-comment">// Find the index of the minimum element in the unsorted part</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 31px;">15</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span>  <span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-keyword">for</span> (<span class="cm-keyword">let</span> <span class="cm-def">j</span> <span class="cm-operator">=</span> <span class="cm-variable-2">i</span><span class="cm-operator">+</span><span class="cm-number">1</span>; <span class="cm-variable-2">j</span> <span class="cm-operator">&lt;</span> <span class="cm-variable-2">elements</span>.<span class="cm-property">length</span>; <span class="cm-variable-2">j</span><span class="cm-operator">++</span>) {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 31px;">16</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-keyword">if</span> (<span class="cm-variable">getValue</span>(<span class="cm-variable-2">min_idx</span>) <span class="cm-operator">&gt;</span> <span class="cm-variable">getValue</span>(<span class="cm-variable-2">j</span>)) {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 31px;">17</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-variable-2">min_idx</span> <span class="cm-operator">=</span> <span class="cm-variable-2">j</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 31px;">18</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span>}</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 31px;">19</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;">  <span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-tab" role="presentation" cm-text="	">    </span>}</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 31px;">20</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span cm-text="">&ZeroWidthSpace;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 31px;">21</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-comment">// Swap the current index and the minimum index</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 31px;">22</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-keyword">await</span> <span class="cm-variable">swap</span>(<span class="cm-variable-2">i</span>, <span class="cm-variable-2">min_idx</span>);</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 31px;">23</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-comment">// Can also be written as:</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 31px;">24</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;">  <span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-comment">// [elements[i], elements[min_idx]] = [elements[min_idx], elements[i]]</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 31px;">25</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-comment">// await updateBox(elements, i);</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 31px;">26</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"> <span class="cm-tab" role="presentation" cm-text="	">   </span>}</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -39px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 31px;">27</div></div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;">}</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 15px; width: 1px; border-bottom: 0px solid transparent; top: 1688px;"></div><div class="CodeMirror-gutters" style="height: 1703px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 39px;"></div></div></div></div></div>
+
+        <div style="margin-top: 15px; width: 90%;">
+            <span id="sort-entry-point-text">SORT ENTRY POINT:</span>
+            <input type="text" id="entry-point" name="entry-point" value="selectionSort" spellcheck="false">
+
+            <button class="btn-code" id="btn-code" type="button" onclick="location.href='#box';">
+                <span class="btn-text">TEST</span>
+                <span class="btn-icon"><i class="material-icons">sync</i></span>
+            </button>
+
+            <br><br>
+            <div id="error-title">Exception occurred <i class="material-icons">report_problem</i></div>
+
+            <div id="error"></div>
+            <div id="success-popup">
+                <div style="text-align: justify;">
+                    <div id="success-text">
+                        Great job! Your code is working!<br>
+                        Click the button below to submit<br>
+                        your code and send it to us!
+                    </div>
+                    <button class="btn-code" id="btn-submit" type="button" style="cursor: default" disabled="">
+                        <span class="btn-text" id="btn-submit-text">SUBMIT</span>
+                        <span class="btn-icon" id="btn-submit-icon"><i class="material-icons">file_upload</i></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-content" style="margin-left: 0">
+          <span class="footer-title" style="font-family: 'Jura', Courier, monospace">SORT VISUALIZER</span><br>
+          &emsp;Daniel Scanu<br>
+          &emsp;Tommaso Tovoli<br>
+          &emsp;Odd Elof Larsson
+        </div>
+        <div class="footer-content">
+          <span class="footer-title">Contacts:</span><br>
+          &emsp;danielscanu45@outlook.it<br>
+          &emsp;tovoli.tommaso@gmail.com<br>
+          &emsp;larsson.odd@gmail.com
+        </div>
+        <div class="footer-content">
+          <span class="footer-title">Reference:</span><br>
+          <a style="
+              display: flex;
+              align-items: center;
+              text-decoration: none;
+              color: #afafaf;
+            " href="https://github.com/Myphz/sortvisualizer" target="_blank">
+            &emsp;<img src="/static/images/Github_icon.png" title="GitHub" alt="github">
+            <span style="padding-left: 5px">GitHub</span>
+          </a>
+
+          <a style="
+              display: flex;
+              align-items: center;
+              text-decoration: none;
+              color: #afafaf;
+            " href="https://en.wikipedia.org/wiki/Sorting_algorithm" target="_blank">
+            &emsp;<img src="/static/images/Wikipedia_icon.png" title="Wikipedia" alt="wikipedia">
+            <span style="padding-left: 5px">Wikipedia</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="credits">
+        Want to create your own website? Check out
+        <a href="https://phoexa.com">Phoexa</a>!
+      </div>
+    </footer>
+  
+</body></html>
